@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote  name="pixelos-gm"
+           fetch="https://github.com/pos-gm"
+           revision="fourteen" />
+
+  <remote  name="pixelos-kei"
+           fetch="https://gitlab.com/kei-space/pixelos"
+           revision="fourteen" />
+
+  <!-- Build -->
+  <project path="build/make" name="build" remote="pixelos-gm">
+    <copyfile src="core/root.mk" dest="Makefile" />
+    <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+    <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+    <linkfile src="core" dest="build/core" />
+    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+    <linkfile src="target" dest="build/target" />
+    <linkfile src="tools" dest="build/tools" />
+  </project>
+
+  <!-- Device -->
+  <project path="device/lineage/sepolicy" name="device_lineage_sepolicy" remote="pixelos-gm" />
+
+  <!-- Frameworks -->
+  <project path="frameworks/base" name="frameworks_base" remote="pixelos-gm" />
+
+  <!-- Hardware (QCOM) -->
+  <project path="hardware/qcom-caf/sm8250/audio" name="hardware_qcom_audio" groups="qcom,kona" remote="pixelos-gm" />
+  <project path="hardware/qcom-caf/sm8250/display" name="hardware_qcom_display" groups="qcom" remote="pixelos-gm" />
+  <project path="hardware/qcom-caf/sm8250/media" name="hardware_qcom_media" groups="qcom,kona" remote="pixelos-gm" />
+
+  <!-- Hardware -->
+  <project path="hardware/xiaomi" name="hardware_xiaomi" remote="pixelos-gm" />
+
+  <!-- Packages -->
+  <project path="packages/apps/GameSpace" name="packages_apps_GameSpace" remote="pixelos-gm" />
+  <project path="packages/apps/Settings" name="packages_apps_Settings" remote="pixelos-gm" />
+  <project path="packages/modules/Bluetooth" name="packages_modules_Bluetooth" groups="pdk" remote="pixelos-gm" />
+  <project path="packages/modules/Wifi" name="packages_modules_Wifi" groups="pdk-cw-fs,pdk-fs" remote="pixelos-gm" />
+  <project path="packages/providers/MediaProvider" name="packages_providers_MediaProvider" remote="pixelos-gm" />
+  <project path="packages/resources/devicesettings" name="packages_resources_devicesettings" remote="pixelos-gm" />
+
+  <!-- Prebuilts -->
+  <project path="prebuilts/clang/host/linux-x86/clang-r498229b" name="kei-space/clang/r498229b" clone-depth="1" revision="master" remote="gitlab" />
+
+  <!-- Vendor -->
+  <project path="vendor/aosp/certs" name="certs" remote="pixelos-kei" />
+  <project path="vendor/aosp" name="vendor_aosp" remote="pixelos-gm" />
+  <project path="vendor/aosp/translations" name="translations" remote="pixelos-kei" />
+</manifest>

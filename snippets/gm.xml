@@ -39,7 +39,7 @@
   <project path="packages/apps/Settings" name="packages_apps_Settings" remote="pixelos-gm" />
   <project path="packages/modules/Bluetooth" name="packages_modules_Bluetooth" groups="pdk" remote="pixelos-gm" />
   <project path="packages/modules/Wifi" name="packages_modules_Wifi" groups="pdk-cw-fs,pdk-fs" remote="pixelos-gm" />
-  <project path="packages/providers/MediaProvider" name="packages_providers_MediaProvider" remote="pixelos-gm" />
+  <project path="packages/providers/MediaProvider" name="packages_providers_MediaProvide" remote="pixelos-gm" />
   <project path="packages/resources/devicesettings" name="packages_resources_devicesettings" remote="pixelos-gm" />
 
   <!-- Prebuilts -->
